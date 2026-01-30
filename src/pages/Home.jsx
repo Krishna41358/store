@@ -29,7 +29,7 @@ function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
             <div className="text-xl sm:text-2xl lg:text-3xl font-serif tracking-wide">
-              <span className="text-rose-500">Balloon</span>
+              <span style={{color: '#d35f70'}}>Balloon</span>
               <span className="text-gray-700"> Flower</span>
             </div>
           </Link>
@@ -37,21 +37,21 @@ function Navbar() {
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-6 lg:gap-10">
             <li>
-              <Link to="/" className="text-gray-600 hover:text-rose-500 text-sm lg:text-base transition-all duration-300 relative group">
+              <Link to="/" className="text-gray-600 text-sm lg:text-base transition-all duration-300 relative group hover-text-primary">
                 Home
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-rose-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-px group-hover:w-full transition-all duration-300" style={{background: '#d35f70'}}></span>
               </Link>
             </li>
             <li>
-              <Link to="/products" className="text-gray-600 hover:text-rose-500 text-sm lg:text-base transition-all duration-300 relative group">
+              <Link to="/products" className="text-gray-600 text-sm lg:text-base transition-all duration-300 relative group hover-text-primary">
                 Products
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-rose-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-px group-hover:w-full transition-all duration-300" style={{background: '#d35f70'}}></span>
               </Link>
             </li>
             <li>
-              <Link to="/about" className="text-gray-600 hover:text-rose-500 text-sm lg:text-base transition-all duration-300 relative group">
+              <Link to="/about" className="text-gray-600 text-sm lg:text-base transition-all duration-300 relative group hover-text-primary">
                 About Us
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-rose-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-px group-hover:w-full transition-all duration-300" style={{background: '#d35f70'}}></span>
               </Link>
             </li>
           </ul>
@@ -59,7 +59,8 @@ function Navbar() {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-rose-500 hover:text-rose-600 transition-colors p-2"
+            className="md:hidden transition-colors p-2"
+            style={{color: '#d35f70'}}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
@@ -83,21 +84,21 @@ function Navbar() {
           <Link 
             to="/" 
             onClick={() => setMobileMenuOpen(false)}
-            className="text-gray-700 hover:text-rose-500 hover:bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg"
+            className="text-gray-700 hover:bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg hover-text-primary"
           >
             Home
           </Link>
           <Link 
             to="/products" 
             onClick={() => setMobileMenuOpen(false)}
-            className="text-gray-700 hover:text-rose-500 hover:bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg"
+            className="text-gray-700 hover:bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg hover-text-primary"
           >
             Products
           </Link>
           <Link 
             to="/about" 
             onClick={() => setMobileMenuOpen(false)}
-            className="text-gray-700 hover:text-rose-500 hover:bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg"
+            className="text-gray-700 hover:bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg hover-text-primary"
           >
             About Us
           </Link>
@@ -150,15 +151,15 @@ function Countdown() {
 
   return (
     <div className="max-w-2xl mx-auto mb-12 sm:mb-16 lg:mb-20 animate-fade-in-up px-4">
-      <div className="bg-white/40 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm p-4 sm:p-5">
-        <p className="text-center text-[10px] sm:text-xs tracking-[0.2em] uppercase text-rose-600 mb-3 sm:mb-4">
+      <div className="bg-white/40 backdrop-blur-sm rounded-xl border shadow-sm p-4 sm:p-5" style={{borderColor: 'rgba(211, 95, 112, 0.2)'}}>
+        <p className="text-center text-[10px] sm:text-xs tracking-[0.2em] uppercase mb-3 sm:mb-4" style={{color: '#d35f70'}}>
           Offer Ends In
         </p>
         
         <div className="flex justify-center items-center gap-3 sm:gap-4">
           {/* Days */}
           <div className="flex flex-col items-center">
-            <span className="text-xl sm:text-2xl md:text-3xl font-serif text-rose-600 tabular-nums">
+            <span className="text-xl sm:text-2xl md:text-3xl font-serif tabular-nums" style={{color: '#d35f70'}}>
               {String(timeLeft.days).padStart(2, '0')}
             </span>
             <span className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-wider mt-0.5">
@@ -166,11 +167,11 @@ function Countdown() {
             </span>
           </div>
 
-          <span className="text-xl sm:text-2xl md:text-3xl font-serif text-rose-300">:</span>
+          <span className="text-xl sm:text-2xl md:text-3xl font-serif" style={{color: 'rgba(211, 95, 112, 0.4)'}}>:</span>
 
           {/* Hours */}
           <div className="flex flex-col items-center">
-            <span className="text-xl sm:text-2xl md:text-3xl font-serif text-rose-600 tabular-nums">
+            <span className="text-xl sm:text-2xl md:text-3xl font-serif tabular-nums" style={{color: '#d35f70'}}>
               {String(timeLeft.hours).padStart(2, '0')}
             </span>
             <span className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-wider mt-0.5">
@@ -178,11 +179,11 @@ function Countdown() {
             </span>
           </div>
 
-          <span className="text-xl sm:text-2xl md:text-3xl font-serif text-rose-300">:</span>
+          <span className="text-xl sm:text-2xl md:text-3xl font-serif" style={{color: 'rgba(211, 95, 112, 0.4)'}}>:</span>
 
           {/* Minutes */}
           <div className="flex flex-col items-center">
-            <span className="text-xl sm:text-2xl md:text-3xl font-serif text-rose-600 tabular-nums">
+            <span className="text-xl sm:text-2xl md:text-3xl font-serif tabular-nums" style={{color: '#d35f70'}}>
               {String(timeLeft.minutes).padStart(2, '0')}
             </span>
             <span className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-wider mt-0.5">
@@ -190,11 +191,11 @@ function Countdown() {
             </span>
           </div>
 
-          <span className="text-xl sm:text-2xl md:text-3xl font-serif text-rose-300">:</span>
+          <span className="text-xl sm:text-2xl md:text-3xl font-serif" style={{color: 'rgba(211, 95, 112, 0.4)'}}>:</span>
 
           {/* Seconds */}
           <div className="flex flex-col items-center">
-            <span className="text-xl sm:text-2xl md:text-3xl font-serif text-rose-600 tabular-nums">
+            <span className="text-xl sm:text-2xl md:text-3xl font-serif tabular-nums" style={{color: '#d35f70'}}>
               {String(timeLeft.seconds).padStart(2, '0')}
             </span>
             <span className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-wider mt-0.5">
@@ -209,7 +210,7 @@ function Countdown() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50/30 via-pink-50/20 to-amber-50/30">
+    <div className="min-h-screen" style={{background: '#fdf3f5'}}>
       <Navbar />
       
       {/* Hero Section - 100vh */}
@@ -227,7 +228,7 @@ export default function Home() {
             <div className="text-left space-y-4 sm:space-y-6 lg:space-y-8 animate-fade-in-left order-2 lg:order-1">
               {/* Badge */}
               <div className="inline-block">
-                <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-rose-50 text-rose-600 rounded-full text-[10px] sm:text-xs uppercase tracking-[0.2em] border border-rose-100">
+                <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs uppercase tracking-[0.2em] border" style={{background: 'rgba(211, 95, 112, 0.1)', color: '#d35f70', borderColor: 'rgba(211, 95, 112, 0.3)'}}>
                   Valentine's Exclusive
                 </span>
               </div>
@@ -235,7 +236,7 @@ export default function Home() {
               {/* Heading */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
                 <span className="text-gray-900 font-serif font-normal">Love, </span>
-                <span className="italic bg-gradient-to-r from-rose-500 via-pink-500 to-rose-500 bg-clip-text text-transparent font-serif font-medium">
+                <span className="italic font-serif font-medium" style={{background: 'linear-gradient(to right, #d35f70, #d35f70)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>
                   Elevated.
                 </span>
               </h1>
@@ -249,7 +250,10 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5">
                 <Link 
                   to="/products" 
-                  className="group inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-500 hover:from-rose-600 hover:via-pink-600 hover:to-rose-600 text-white rounded-full text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
+                  className="group inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 text-white rounded-full text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
+                  style={{background: '#d35f70'}}
+                  onMouseEnter={(e) => e.currentTarget.style.background = '#c2515f'}
+                  onMouseLeave={(e) => e.currentTarget.style.background = '#d35f70'}
                 >
                   Order Now
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -258,7 +262,7 @@ export default function Home() {
                 </Link>
 
                 <div className="flex items-center gap-2">
-                  <div className="flex text-yellow-400 text-sm">
+                  <div className="flex text-sm" style={{color: '#c4a459'}}>
                     {'★'.repeat(5)}
                   </div>
                   <span className="text-xs sm:text-sm text-gray-600">Premium Quality</span>
@@ -303,10 +307,10 @@ export default function Home() {
                         </div>
 
                         <div className="flex items-center justify-between">
-                          <p className="text-lg sm:text-xl font-serif text-rose-600">
+                          <p className="text-lg sm:text-xl font-serif" style={{color: '#d35f70'}}>
                             {formatRupees(product.price)}
                           </p>
-                          <div className="flex text-yellow-400 text-xs">
+                          <div className="flex text-xs" style={{color: '#c4a459'}}>
                             {'★'.repeat(5)}
                           </div>
                         </div>
@@ -316,7 +320,10 @@ export default function Home() {
                     {/* Order Button */}
                     <Link 
                       to={`/order?product_id=${product.id}`}
-                      className="block w-full bg-gradient-to-r from-rose-500 via-pink-500 to-rose-500 hover:from-rose-600 hover:via-pink-600 hover:to-rose-600 text-white text-center py-2 sm:py-2.5 text-xs sm:text-sm transition-all duration-300"
+                      className="block w-full text-white text-center py-2 sm:py-2.5 text-xs sm:text-sm transition-all duration-300"
+                      style={{background: '#d35f70'}}
+                      onMouseEnter={(e) => e.currentTarget.style.background = '#c2515f'}
+                      onMouseLeave={(e) => e.currentTarget.style.background = '#d35f70'}
                     >
                       Order Now ❤️
                     </Link>
@@ -327,7 +334,10 @@ export default function Home() {
               {/* View All Link */}
               <Link 
                 to="/products"
-                className="mt-4 sm:mt-5 block text-center text-sm text-rose-600 hover:text-rose-700 transition-colors group"
+                className="mt-4 sm:mt-5 block text-center text-sm transition-colors group"
+                style={{color: '#d35f70'}}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#c2515f'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#d35f70'}
               >
                 View All Products
                 <svg className="inline-block w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -354,7 +364,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-8 sm:mb-10 lg:mb-14 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-serif bg-gradient-to-r from-rose-600 via-pink-500 to-rose-600 bg-clip-text text-transparent mb-2 sm:mb-3">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-serif mb-2 sm:mb-3" style={{background: 'linear-gradient(to right, #d35f70, #d35f70)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>
               Our Valentine's Collection
             </h2>
             <p className="text-sm sm:text-base lg:text-lg font-serif italic text-gray-600 max-w-2xl mx-auto px-4">
@@ -382,7 +392,7 @@ export default function Home() {
                   />
                   
                   {/* Limited Badge */}
-                  <div className="absolute top-3 right-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-3 py-1 rounded-full text-[10px] uppercase tracking-wider shadow-md">
+                  <div className="absolute top-3 right-3 text-white px-3 py-1 rounded-full text-[10px] uppercase tracking-wider shadow-md" style={{background: '#d35f70'}}>
                     Limited
                   </div>
 
@@ -392,7 +402,9 @@ export default function Home() {
 
                 {/* Content */}
                 <div className="p-4 sm:p-5 lg:p-6">
-                  <h3 className="text-lg sm:text-xl font-serif text-gray-800 mb-1.5 sm:mb-2 group-hover:text-rose-600 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-serif text-gray-800 mb-1.5 sm:mb-2 group-hover:transition-colors" style={{transition: 'color 0.3s'}} 
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#d35f70'} 
+                    onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                     {product.name}
                   </h3>
                   
@@ -401,17 +413,20 @@ export default function Home() {
                   </p>
                   
                   <div className="flex items-center justify-between mb-4">
-                    <p className="text-xl sm:text-2xl font-serif text-rose-600">
+                    <p className="text-xl sm:text-2xl font-serif" style={{color: '#d35f70'}}>
                       {formatRupees(product.price)}
                     </p>
-                    <div className="flex text-yellow-400 text-xs sm:text-sm">
+                    <div className="flex text-xs sm:text-sm" style={{color: '#c4a459'}}>
                       {'★'.repeat(5)}
                     </div>
                   </div>
                   
                   <Link 
                     to={`/order?product_id=${product.id}`} 
-                    className="block w-full bg-gradient-to-r from-rose-500 via-pink-500 to-rose-500 hover:from-rose-600 hover:via-pink-600 hover:to-rose-600 text-white text-center py-2.5 sm:py-3 rounded-full text-xs sm:text-sm shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 active:scale-95"
+                    className="block w-full text-white text-center py-2.5 sm:py-3 rounded-full text-xs sm:text-sm shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 active:scale-95"
+                    style={{background: '#d35f70'}}
+                    onMouseEnter={(e) => e.currentTarget.style.background = '#c2515f'}
+                    onMouseLeave={(e) => e.currentTarget.style.background = '#d35f70'}
                   >
                     Order Now ❤️
                   </Link>
@@ -431,7 +446,7 @@ export default function Home() {
               />
               
               {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-rose-600/90 via-pink-600/85 to-rose-600/90"></div>
+              <div className="absolute inset-0" style={{background: 'linear-gradient(to right, rgba(211, 95, 112, 0.9), rgba(211, 95, 112, 0.85), rgba(211, 95, 112, 0.9))'}}></div>
               
               {/* Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
@@ -491,6 +506,10 @@ export default function Home() {
 
         body {
           font-family: 'Montserrat', sans-serif;
+        }
+
+        .hover-text-primary:hover {
+          color: #d35f70;
         }
 
         .tabular-nums {

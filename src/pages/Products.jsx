@@ -29,7 +29,7 @@ function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
             <div className="text-xl sm:text-2xl lg:text-3xl font-serif tracking-wide">
-              <span className="text-rose-500">Balloon</span>
+              <span className="primary-color">Balloon</span>
               <span className="text-gray-700"> Flower</span>
             </div>
           </Link>
@@ -37,19 +37,19 @@ function Navbar() {
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-6 lg:gap-10">
             <li>
-              <Link to="/" className="text-gray-600 hover:text-rose-500 text-sm lg:text-base transition-all duration-300 relative group">
+              <Link to="/" className="text-gray-600 hover:primary-color text-sm lg:text-base transition-all duration-300 relative group">
                 Home
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-rose-400 group-hover:w-full transition-all duration-300"></span>
               </Link>
             </li>
             <li>
-              <Link to="/products" className="text-rose-500 text-sm lg:text-base transition-all duration-300 relative">
+              <Link to="/products" className="primary-color text-sm lg:text-base transition-all duration-300 relative">
                 Products
                 <span className="absolute -bottom-1 left-0 w-full h-px bg-rose-400"></span>
               </Link>
             </li>
             <li>
-              <Link to="/about" className="text-gray-600 hover:text-rose-500 text-sm lg:text-base transition-all duration-300 relative group">
+              <Link to="/about" className="text-gray-600 hover:primary-color text-sm lg:text-base transition-all duration-300 relative group">
                 About Us
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-rose-400 group-hover:w-full transition-all duration-300"></span>
               </Link>
@@ -59,7 +59,7 @@ function Navbar() {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-rose-500 hover:text-rose-600 transition-colors p-2"
+            className="md:hidden primary-color hover:primary-color transition-colors p-2"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
@@ -83,21 +83,21 @@ function Navbar() {
           <Link 
             to="/" 
             onClick={() => setMobileMenuOpen(false)}
-            className="text-gray-700 hover:text-rose-500 hover:bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg"
+            className="text-gray-700 hover:primary-color hover:bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg"
           >
             Home
           </Link>
           <Link 
             to="/products" 
             onClick={() => setMobileMenuOpen(false)}
-            className="text-rose-500 bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg"
+            className="primary-color bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg"
           >
             Products
           </Link>
           <Link 
             to="/about" 
             onClick={() => setMobileMenuOpen(false)}
-            className="text-gray-700 hover:text-rose-500 hover:bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg"
+            className="text-gray-700 hover:primary-color hover:bg-rose-50/50 text-base transition-all px-4 py-3 rounded-lg"
           >
             About Us
           </Link>
@@ -145,7 +145,8 @@ export default function Products() {
   }, [sortBy, filterPrice])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50/30 via-pink-50/20 to-amber-50/30">
+    <div className="min-h-screen" style={{background: '#fdf3f5'}}>
+      <Navbar />">
       <Navbar />
       
       {/* Hero Header */}
@@ -160,7 +161,7 @@ export default function Products() {
         <div className="max-w-7xl mx-auto text-center animate-fade-in">
           {/* Badge */}
           <div className="inline-block mb-2 sm:mb-3">
-            <span className="inline-flex items-center px-3 py-1.5 bg-rose-50 text-rose-600 rounded-full text-[10px] uppercase tracking-[0.2em] border border-rose-100">
+            <span className="inline-flex items-center px-3 py-1.5 bg-rose-50 primary-color rounded-full text-[10px] uppercase tracking-[0.2em] border border-rose-100">
               Valentine's Collection
             </span>
           </div>
@@ -189,7 +190,7 @@ export default function Products() {
               {/* Results Count */}
               <div className="flex items-center gap-2">
                 <span className="text-sm sm:text-base text-gray-700">
-                  Showing <span className="font-serif font-medium text-rose-600">{products.length}</span> {products.length === 1 ? 'product' : 'products'}
+                  Showing <span className="font-serif font-medium primary-color">{products.length}</span> {products.length === 1 ? 'product' : 'products'}
                 </span>
               </div>
 
@@ -252,7 +253,7 @@ export default function Products() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                       <Link 
                         to={`/order?product_id=${product.id}`}
-                        className="bg-white text-rose-600 px-4 py-2 rounded-full text-xs font-medium hover:bg-rose-50 transition-all transform translate-y-4 group-hover:translate-y-0"
+                        className="bg-white primary-color px-4 py-2 rounded-full text-xs font-medium hover:bg-rose-50 transition-all transform translate-y-4 group-hover:translate-y-0"
                       >
                         Quick Order
                       </Link>
@@ -261,7 +262,7 @@ export default function Products() {
 
                   {/* Content */}
                   <div className="p-4 sm:p-5">
-                    <h3 className="text-base sm:text-lg font-serif text-gray-800 mb-1.5 group-hover:text-rose-600 transition-colors line-clamp-1">
+                    <h3 className="text-base sm:text-lg font-serif text-gray-800 mb-1.5 group-hover:primary-color transition-colors line-clamp-1">
                       {product.name}
                     </h3>
                     
@@ -270,10 +271,10 @@ export default function Products() {
                     </p>
                     
                     <div className="flex items-center justify-between mb-3">
-                      <p className="text-lg sm:text-xl font-serif text-rose-600">
+                      <p className="text-lg sm:text-xl font-serif primary-color">
                         {formatRupees(product.price)}
                       </p>
-                      <div className="flex text-yellow-400 text-xs">
+                      <div className="flex star-color text-xs">
                         {'★'.repeat(5)}
                       </div>
                     </div>
@@ -372,6 +373,11 @@ export default function Products() {
 
       {/* Custom Styles */}
       <style jsx>{`
+        .primary-color { color: #d35f70; }
+        .primary-hover { color: #c2515f; }
+        .hover-primary:hover { color: #d35f70; }
+        .star-color { color: #c4a459; }
+
         @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
         .font-serif {
