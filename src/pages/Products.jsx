@@ -146,7 +146,6 @@ export default function Products() {
 
   return (
     <div className="min-h-screen" style={{background: '#fdf3f5'}}>
-      <Navbar />">
       <Navbar />
       
       {/* Hero Header */}
